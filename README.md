@@ -13,5 +13,5 @@ npm start
 
 ## build the app for deployment
 ```shell
-npm build
+npm run build
 ```

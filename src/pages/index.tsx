@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
+import { Router } from '@reach/router';
 
 import { Menu } from '../components/menu/Menu';
-import menuStructure from './menuStructure.json'
+import { RandomPage } from './page';
 
 import './index.scss';
-import { RandomPage } from './page';
-import { createHistory, createMemorySource, LocationProvider, Router } from '@reach/router';
 
 function App() {
   // let source = createMemorySource("/")
@@ -18,7 +17,7 @@ function App() {
           <h1>Page title</h1>
         </header>
         <aside>
-          <Menu currentPage={currentPage} menuStructure={menuStructure.data} />
+          <Menu currentPage={currentPage} />
         </aside>
         <main>
           <Router> 

@@ -1,4 +1,4 @@
-import { Link, useMatch } from '@reach/router';
+import { Link } from '@reach/router';
 import { useEffect, useState } from 'react';
 import { menuItemInterface } from './menuItemInterface';
 import { MenuList } from './MenuList';
@@ -16,13 +16,13 @@ export const MenuItem = ( {structure, depth, currentPage} :props) => {
   const [open, setOpen] = useState(false)
   const hasChildren = structure.children && structure.children.length > 0
 
-  const deapSearch = (childStructure: menuItemInterface) :boolean => {
+  const deepSearch = (childStructure: menuItemInterface) :boolean => {
     if(childStructure.name === currentPage) {
       console.log('TRUE', childStructure.name)
       return true
     }
     if (childStructure.children && childStructure.children.length > 0) {
-      return childStructure.children.map(deapSearch).some(bool => bool === true)
+      return childStructure.children.map(deepSearch).some(bool => bool === true)
     }
     return false
   }
@@ -32,7 +32,7 @@ export const MenuItem = ( {structure, depth, currentPage} :props) => {
       setOpen(true)
     }
     if (structure.children && structure.children.length > 0) {
-      const isChildActive = structure.children.map(deapSearch).some(bool => bool === true)
+      const isChildActive = structure.children.map(deepSearch).some(bool => bool === true)
       if(isChildActive ) {
         setOpen(true)
       }
