@@ -6,13 +6,14 @@ interface props {
   menuStructure: Array<menuItemInterface>
   className?: string
   depth?: number
+  currentPage: string
 }
 
-export const MenuList = ({menuStructure, className, depth = 1}: props) => {
+export const MenuList = ({menuStructure, className, depth = 1, currentPage}: props) => {
   return (
     <ul className={`${className || 'closed'} menu-list`} >
       {menuStructure.map(structure => {
-          return <MenuItem key={structure.name} structure={structure} depth={depth} ></MenuItem>
+          return <MenuItem currentPage={currentPage} key={structure.name} structure={structure} depth={depth} ></MenuItem>
       })}
     </ul>
   )

@@ -1,5 +1,14 @@
+:root{
+  font-size: 16px;
+  --primary: rgb(207, 133, 23); 
+  --background-white: rgb(248, 251, 252);
+  --background-primary: rgb(142, 212, 253); 
+  --background-primary-hover: rgb(196, 233, 255);
+}
 body {
   margin: 0px;
+  font-family: system-ui;
+  background: var(--background-white, #fff);
 }
 *{
   box-sizing: border-box;

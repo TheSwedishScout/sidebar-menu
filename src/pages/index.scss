@@ -3,15 +3,14 @@
   min-height: 100vh;
   grid-template-columns: 300px auto;
   grid-template-rows:auto 1fr;
+  gap: .5rem;
   .app-header {
     grid-row: 1;
     grid-column: 1/ -1;
+    h1 {
+      font-family: serif;
+    }
   }
+  
 }
 
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}

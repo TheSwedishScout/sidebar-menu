@@ -1,29 +1,34 @@
 .app-nav{
-  .base > .list-item{
-    padding-left: 0;
+  background: var(--background-primary, gray);
+  height: 100%;
+  border-radius: 0 1rem 0 0 ;
 
+  .menu-list {
+    margin: 0;
+    &.base > .list-item{
+      padding-left: 0;
+    }
   }
   .list-item {
     cursor: pointer;
+    position: relative;
 
     & + .list-item {
       border-top: 0px;
     }
    
     .text-wrapper {
-      background: gray;
       
       padding: .5rem;
       display: flex;
       align-items: center;
-      &:hover {
-        background: #ccc
+      &:hover,
+      &.active {
+        background: var(--background-primary-hover, #ccc);
       }
-      button {
-        background: none;
-        border: none;
+
+      a{
         line-height: 1.5rem;
-        cursor: pointer;
       }
       .chevron {
         display: inline-block;
@@ -32,8 +37,12 @@
         border-top: .7rem solid transparent;
         border-bottom: .7rem solid transparent;
         margin-right: .5em;
+        @media (prefers-reduced-motion: no-preference) {
+          transition: transform 100ms;
+        }
         
-        border-left: 1rem solid black;
+        
+        border-left: 1rem solid var(--primary, black);
         &.open {
           transform: rotate(90deg)
         }
@@ -47,9 +56,15 @@
   .menu-list {
     list-style: none;
     padding-left: 0;
+    overflow: hidden;
+    max-height: calc(8 * 2.5rem);
+    @media (prefers-reduced-motion: no-preference) {
+      transition: max-height 200ms;
+    }
+    
     &.closed{
       max-height: 0px;
-      overflow: hidden;
     }
+
   }
 }
