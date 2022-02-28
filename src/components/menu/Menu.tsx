@@ -22,8 +22,7 @@ export const Menu = ({currentPage}:props) => {
   
   return (
     <nav className="app-nav">
-      {/* isLoading= {!error && !data} */}
-      <Loader  /> 
+      <Loader isLoading= {!error && !data} /> 
       {error && (
         <div>
           <h3>error</h3>
