@@ -1,0 +1,55 @@
+.app-nav{
+  .base > .list-item{
+    padding-left: 0;
+
+  }
+  .list-item {
+    cursor: pointer;
+
+    & + .list-item {
+      border-top: 0px;
+    }
+   
+    .text-wrapper {
+      background: gray;
+      
+      padding: .5rem;
+      display: flex;
+      align-items: center;
+      &:hover {
+        background: #ccc
+      }
+      button {
+        background: none;
+        border: none;
+        line-height: 1.5rem;
+        cursor: pointer;
+      }
+      .chevron {
+        display: inline-block;
+        width: 0; 
+        height: 0; 
+        border-top: .7rem solid transparent;
+        border-bottom: .7rem solid transparent;
+        margin-right: .5em;
+        
+        border-left: 1rem solid black;
+        &.open {
+          transform: rotate(90deg)
+        }
+      }
+      .spacer {
+        display: inline-block;
+        width:1.5rem;
+      }
+    }
+  }
+  .menu-list {
+    list-style: none;
+    padding-left: 0;
+    &.closed{
+      max-height: 0px;
+      overflow: hidden;
+    }
+  }
+}
